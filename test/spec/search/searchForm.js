@@ -20,16 +20,18 @@ describe('Directive: searchForm', function () {
   describe('SearchFormCtrl', function () {
     var $controller,
       CriteriaModel,
-      WorkflowSearch;
+      WorkflowSearch,
+      $timeout;
 
-    beforeEach(inject(function (_$controller_, _CriteriaModel_, _WorkflowSearch_) {
+    beforeEach(inject(function (_$controller_, _CriteriaModel_, _WorkflowSearch_, _$timeout_) {
       $controller = _$controller_;
       CriteriaModel = _CriteriaModel_;
       WorkflowSearch = _WorkflowSearch_;
+      $timeout = _$timeout_;
     }));
 
     function getCtrl(WorkflowSearch) {
-      return $controller('SearchFormCtrl', { CriteriaModel: CriteriaModel, WorkflowSearch: WorkflowSearch});
+      return $controller('SearchFormCtrl', { CriteriaModel: CriteriaModel, WorkflowSearch: WorkflowSearch, $timeout: $timeout});
     }
 
     it('sets criteria model into view model', function () {
@@ -61,11 +63,14 @@ describe('Directive: searchForm', function () {
 
     describe('search', function () {
       it('sets result into view model', function () {
-        sinon.stub(WorkflowSearch, 'query', function() { return [ 'result' ]; });
+        var result = {$promise: {
+          then: function() {}
+        }};
+        sinon.stub(WorkflowSearch, 'query', function() { return result; });
 
         CriteriaModel.model = { foo: 'bar' };
         var ctrl = getCtrl(WorkflowSearch);
-        expect(ctrl.results).toEqual([ 'result' ]);
+        expect(ctrl.results).toEqual(result);
 
         WorkflowSearch.query.restore();
       });
