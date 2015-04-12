@@ -27,6 +27,7 @@
     model.timeUnits = ['minutes', 'hours', 'days'];
     model.timeUnit = model.timeUnits[0];
     model.duration = 0;
+    model.statuses = ['created', 'inProgress', 'paused', 'stopped', 'manual', 'finished']
 
     var self = this;
     self.model = model;
@@ -62,6 +63,9 @@
       var request = {};
       if(model.nextState) {
         request.state = model.nextState.name;
+      }
+      if(model.status) {
+        request.status = model.status;
       }
       if(_.isNumber(model.duration) && model.timeUnit) {
         request.nextActivationTime = now.add(moment.duration(model.duration, model.timeUnit));
