@@ -9,6 +9,14 @@
       </div>
     </div>
     <div class="form-group">
+      <label class="col-md-3 control-label" for="status">Set status to</label>
+      <div class="col-md-9">
+        <select class="selectwidthauto form-control" id="status" ng-model="ctrl.model.status" ng-options="status for status in ctrl.model.statuses">
+          <option value="">-- Keep current status --</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
       <label class="col-md-3 control-label" for="duration">Next activation in</label>
       <div class="col-md-3">
         <input class="form-control" id="duration" type="number" ng-model="ctrl.model.duration"/>
