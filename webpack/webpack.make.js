@@ -19,7 +19,7 @@ module.exports = function makeWebpackConfig (options) {
   var PORT = 8000;
   var ROOT_DIR = options.ROOT_DIR;
   var POST_CSS = false;
-  //var appConfig = require('../env')(options.ENV)
+  //var appConfig = require('../env')(options.ENV) // TODO
   var appConfig = {};
 
   console.log('Application configuration:')

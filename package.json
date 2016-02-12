@@ -16,11 +16,15 @@
     "angular": "1.4.9",
     "angular-animate": "1.4.9",
     "angular-cookies": "1.4.9",
+    "angular-nvd3": "1.0.0-beta",
     "angular-resource": "1.4.9",
     "angular-sanitize": "1.4.9",
     "angular-touch": "1.4.9",
     "angular-ui-router": "0.2.15",
     "autoprefixer": "6.1.2",
+    "bootstrap-sass": "3.3.6",
+    "d3": "3.5.15",
+    "dygraphs": "1.1.0",
     "es5-shim": "4.5.2",
     "fastclick": "1.0.6",
     "jquery": "^2.1.4",
@@ -72,7 +76,6 @@
     "webpack": "1.12.13",
     "webpack-dev-server": "1.14.1"
   },
-
   "engines": {
     "node": ">=5.0.0"
   }

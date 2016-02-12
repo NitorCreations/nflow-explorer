@@ -26,7 +26,7 @@ import angular from 'angular';
     self.model = CriteriaModel.model;
     self.search = search;
     self.onTypeChange = CriteriaModel.onDefinitionChange;
-
+    self.spinnerUrl = require('images/spinner.gif');
     initialize();
 
     function initialize() {

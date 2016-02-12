@@ -1,5 +1,5 @@
 import angular from 'angular';
-
+import moment from 'moment';
 
 var m = angular.module('nflowExplorer.workflow.tabs.actionHistory', []);
 

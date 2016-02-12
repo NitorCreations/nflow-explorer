@@ -36,6 +36,7 @@ var m = angular.module('nflowExplorer.layout', []);
     self.isExecutorsTabActive = function() { return $state.includes('executorsTab'); };
     self.isSearchTabActive = function() { return $state.includes('searchTab'); };
     self.isAboutTabActive = function() { return $state.includes('aboutTab'); };
+    self.logoUrl = require('../../images/nflow_logo.svg');
   });
 
 export default m.name;

@@ -1,4 +1,5 @@
 import angular from 'angular';
+import dagre from 'external/dagre-d3/js/dagre-d3';
 
 var m = angular.module('nflowExplorer.workflowDefinition.graph', []);
 
