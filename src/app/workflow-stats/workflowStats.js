@@ -1,5 +1,6 @@
-'use strict';
-angular.module('nflowExplorer.workflowStats', [])
+import angular from 'angular';
+
+export default angular.module('nflowExplorer.workflowStats', [])
 .controller('WorkflowStatsCtrl', function WorkflowStatsCtrl($scope, $rootScope, $interval, WorkflowDefinitions, WorkflowDefinitionStats,
                                                              $stateParams, config) {
   $scope.type=$stateParams.type;
@@ -229,4 +230,4 @@ angular.module('nflowExplorer.workflowStats', [])
     }
   });
 
-});
+}).name;

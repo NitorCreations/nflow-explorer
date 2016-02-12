@@ -1,11 +1,6 @@
-(function () {
-  'use strict';
+import angular from 'angular';
 
-  var m = angular.module('nflowExplorer.workflow', [
-    'nflowExplorer.workflow.graph',
-    'nflowExplorer.workflow.info',
-    'nflowExplorer.workflow.tabs'
-  ]);
+var m = angular.module('nflowExplorer.workflow.workflow', []);
 
   m.controller('WorkflowCtrl', function (workflow, definition,
                                           parentWorkflow, childWorkflows) {
@@ -15,4 +10,5 @@
     self.definition = definition;
     self.childWorkflows = childWorkflows;
   });
-})();
+
+export default m.name;

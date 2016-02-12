@@ -1,7 +1,6 @@
-(function () {
-  'use strict';
+import angular from 'angular';
 
-  var m = angular.module('nflowExplorer.services.executorPoller', [
+var m = angular.module('nflowExplorer.services.executorPoller', [
     'nflowExplorer.services'
   ]);
 
@@ -30,4 +29,5 @@
       });
     }
   });
-})();
+
+export default m.name;

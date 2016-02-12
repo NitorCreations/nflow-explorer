@@ -1,20 +1,17 @@
-(function () {
-  'use strict';
+import angular from 'angular';
 
-  var m = angular.module('nflowExplorer.constants', []);
-
-  m.constant('WorkflowStateType', {
+export default angular.module('nflowExplorer.constants', [])
+  .constant('WorkflowStateType', {
     START: 'start',
     MANUAL: 'manual',
     NORMAL: 'normal',
     END: 'end',
     ERROR: 'error'
-  });
-
-  m.constant('WorkflowInstanceStatus', {
+  })
+  .constant('WorkflowInstanceStatus', {
     CREATED: 'created',
     IN_PROGRESS: 'inProgress',
     FINISHED: 'finished',
     MANUAL: 'manual'
-  });
-})();
+  }).name;
+

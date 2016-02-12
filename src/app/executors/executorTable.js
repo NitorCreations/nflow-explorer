@@ -1,10 +1,6 @@
-(function () {
-  'use strict';
+import angular from 'angular';
 
-  var m = angular.module('nflowExplorer.executors.executorTable', [
-    'nflowExplorer.filters',
-    'nflowExplorer.services'
-  ]);
+var m = angular.module('nflowExplorer.executors.executorTable', []);
 
   m.directive('executorTable', function () {
     return {
@@ -15,7 +11,7 @@
       },
       bindToController: true,
       controller: 'ExecutorTableCtrl as ctrl',
-      templateUrl: 'app/executors/executorTable.html'
+      template: require('./executorTable.html')
     };
   });
 
@@ -62,4 +58,4 @@
     }
   });
 
-})();
+export default m.name;

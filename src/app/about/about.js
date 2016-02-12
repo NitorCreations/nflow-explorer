@@ -1,6 +1,6 @@
-'use strict';
+import angular from 'angular';
 
-angular.module('nflowExplorer.about', [])
+export default angular.module('nflowExplorer.about', [])
 .controller('AboutCtrl', function AboutCtrl($scope, config) {
   $scope.nflowUrl = function() {
     return config.nflowUrl;
@@ -9,4 +9,4 @@ angular.module('nflowExplorer.about', [])
   $scope.nflowApiDocs = function() {
     return config.nflowApiDocs;
   };
-});
+}).name;

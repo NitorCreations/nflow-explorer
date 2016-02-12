@@ -1,13 +1,13 @@
-(function () {
-  'use strict';
+import angular from 'angular';
 
-  var m = angular.module('nflowExplorer.layout', []);
+
+var m = angular.module('nflowExplorer.layout', []);
 
   m.directive('layout', function() {
     return {
       restrict: 'E',
       replace: 'true',
-      templateUrl: 'app/layout/layout.html'
+      template: require('./layout.html')
     };
   });
 
@@ -15,7 +15,7 @@
     return {
       restrict: 'E',
       replace: 'true',
-      templateUrl: 'app/layout/header.html',
+      template: require('./header.html'),
       controller: 'PageHeaderCtrl as ctrl'
     };
   });
@@ -24,7 +24,7 @@
     return {
       restrict: 'E',
       replace: 'true',
-      templateUrl: 'app/layout/footer.html'
+      template: require('./footer.html')
     };
   });
 
@@ -38,4 +38,4 @@
     self.isAboutTabActive = function() { return $state.includes('aboutTab'); };
   });
 
-})();
+export default m.name;

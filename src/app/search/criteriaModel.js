@@ -1,7 +1,7 @@
-(function () {
-  'use strict';
+import angular from 'angular';
 
-  var m = angular.module('nflowExplorer.search.criteriaModel', []);
+
+var m = angular.module('nflowExplorer.search.criteriaModel', []);
 
   m.factory('CriteriaModel', function() {
     var self  = {};
@@ -55,4 +55,5 @@
       return v || null;
     }
   });
-})();
+
+export default m.name;

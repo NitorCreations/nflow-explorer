@@ -1,9 +1,7 @@
-(function () {
-  'use strict';
+import angular from 'angular';
 
-  var m = angular.module('nflowExplorer.workflow.tabs.actionHistory', [
-    'nflowExplorer.workflow.graph'
-  ]);
+
+var m = angular.module('nflowExplorer.workflow.tabs.actionHistory', []);
 
   m.directive('workflowTabActionHistory', function() {
     return {
@@ -16,7 +14,7 @@
       bindToController: true,
       controller: 'WorkflowTabActionHistoryCtrl',
       controllerAs: 'ctrl',
-      templateUrl: 'app/workflow/tabs/actionHistory.html'
+      template: require('./actionHistory.html')
     };
   });
 
@@ -45,4 +43,5 @@
     }
 
   });
-})();
+
+export default m.name;

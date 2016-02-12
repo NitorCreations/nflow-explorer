@@ -1,9 +1,7 @@
-(function () {
-  'use strict';
+import angular from 'angular';
 
-  var m = angular.module('nflowExplorer.workflow.info', [
-    'nflowExplorer.workflow.graph'
-  ]);
+
+var m = angular.module('nflowExplorer.workflow.info', []);
 
   m.directive('workflowInfo', function() {
     return {
@@ -17,7 +15,7 @@
       bindToController: true,
       controller: 'WorkflowInfoCtrl',
       controllerAs: 'ctrl',
-      templateUrl: 'app/workflow/workflowInfo.html'
+      template: require('./workflowInfo.html')
     };
   });
 
@@ -30,4 +28,5 @@
       return _.result(self, 'modified', '');
     }
   });
-})();
+
+export default m.name;

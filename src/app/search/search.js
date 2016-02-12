@@ -1,11 +1,6 @@
-(function () {
-  'use strict';
+import angular from 'angular';
 
-  var m = angular.module('nflowExplorer.search', [
-    'nflowExplorer.search.criteriaModel',
-    'nflowExplorer.search.searchForm',
-    'nflowExplorer.search.searchResult'
-  ]);
+var m = angular.module('nflowExplorer.search.search', []);
 
   m.controller('SearchCtrl', function ($stateParams, definitions, CriteriaModel) {
     var self = this;
@@ -33,4 +28,4 @@
     }
   });
 
-})();
+export default m.name

@@ -1,7 +1,6 @@
-'use strict';
-angular.module('nflowExplorer.services',
-               ['ngResource'])
-.constant('config', new Config())
+import angular from 'angular';
+export default angular.module('nflowExplorer.services', [])
+.constant('config', {}) // TODO new config
 .factory('Workflows', function WorkflowsFactory($resource, config) {
   return $resource(config.nflowUrl + '/v1/workflow-instance/:id',
                    {id: '@id', include: 'actions,currentStateVariables,actionStateVariables'},
@@ -98,6 +97,4 @@ angular.module('nflowExplorer.services',
   self.currentMoment = function() {
     return moment();
   };
-})
-
-;
+}).name;

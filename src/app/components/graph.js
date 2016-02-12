@@ -1,7 +1,6 @@
-(function () {
-  'use strict';
+import angular from 'angular';
 
-  var m = angular.module('nflowExplorer.graph', []);
+var m = angular.module('nflowExplorer.graph', []);
 
   m.factory('Graph', function() {
     return {
@@ -354,4 +353,5 @@
 
     function edgeDomId(edgeId) { return 'edge' + edgeId; }
   });
-})();
+
+export default m.name;

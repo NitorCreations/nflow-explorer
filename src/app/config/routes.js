@@ -1,12 +1,9 @@
-(function () {
-  'use strict';
+import angular from 'angular';
 
-  var m = angular.module('nflowExplorer.config.routes', [
-    'nflowExplorer.services',
-    'ui.router'
-  ]);
-
-  m.config(function ($stateProvider, $urlRouterProvider) {
+export default angular.module('nflowExplorer.config.routes', [
+  require('angular-ui-router')
+])
+  .config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/');
 
     $stateProvider.state('frontPageTab', {
@@ -33,13 +30,13 @@
       .state('frontPage', {
         parent: 'frontPageTab',
         url: '/',
-        templateUrl: 'app/front-page/frontPage.html',
+        template: require('app/front-page/frontPage.html'),
         controller: 'FrontPageCtrl as ctrl'
       })
       .state('search', {
         parent: 'searchTab',
         url: '/search?type&state&parentWorkflowId',
-        templateUrl: 'app/search/search.html',
+        template: require('app/search/search.html'),
         controller: 'SearchCtrl as ctrl',
         resolve: {
           definitions: function (WorkflowDefinitions) {
@@ -50,25 +47,25 @@
       .state('executors', {
         parent: 'executorsTab',
         url: '/executors',
-        templateUrl: 'app/executors/executors.html',
+        template: require('app/executors/executors.html'),
         controller: 'ExecutorsCtrl as ctrl'
       })
       .state('about', {
         parent: 'aboutTab',
         url: '/about',
-        templateUrl: 'app/about/about.html',
+        template: require('app/about/about.html'),
         controller: 'AboutCtrl'
       })
       .state('workflow-stats', {
         parent: 'frontPageTab',
         url: '/workflow-stats?type',
-        templateUrl: 'app/workflow-stats/workflowStats.html',
+        template: require('app/workflow-stats/workflowStats.html'),
         controller: 'RadiatorCtrl'
       })
       .state('workflow-definition', {
         parent: 'frontPageTab',
         url: '/workflow-definition/:type',
-        templateUrl: 'app/workflow-definition/workflowDefinition.html',
+        template: require('app/workflow-definition/workflowDefinition.html'),
         controller: 'WorkflowDefinitionCtrl as ctrl',
         resolve: {
           loadCss: loadCss,
@@ -80,7 +77,7 @@
       .state('workflow', {
         parent: 'searchTab',
         url: '/workflow/:id',
-        templateUrl: 'app/workflow/workflow.html',
+        template: require('app/workflow/workflow.html'),
         controller: 'WorkflowCtrl as ctrl',
         resolve: {
           loadCss: loadCss,
@@ -110,5 +107,4 @@
       return GraphService.loadCss();
     }
 
-  });
-})();
+  }).name;

@@ -1,7 +1,7 @@
-(function () {
-  'use strict';
+import angular from 'angular';
 
-  var m = angular.module('nflowExplorer.workflow.tabs.stateVariables', []);
+
+var m = angular.module('nflowExplorer.workflow.tabs.stateVariables', []);
 
   m.directive('workflowTabStateVariables', function() {
     return {
@@ -13,9 +13,10 @@
       bindToController: true,
       controller: 'WorkflowTabStateVariablesCtrl',
       controllerAs: 'ctrl',
-      templateUrl: 'app/workflow/tabs/stateVariables.html'
+      template: require('./stateVariables.html')
     };
   });
 
   m.controller('WorkflowTabStateVariablesCtrl', function() {});
-})();
+
+export default m.name;

@@ -1,9 +1,6 @@
-(function () {
-  'use strict';
+import angular from 'angular';
 
-  var m = angular.module('nflowExplorer.workflow.graph', [
-    'nflowExplorer.graph'
-  ]);
+var m = angular.module('nflowExplorer.workflow.graph', []);
 
   m.directive('workflowGraph', function() {
     return {
@@ -69,4 +66,5 @@
 
     function registerOnSelectNodeListener(fn) { onSelectNodeListeners.push(fn); }
   });
-})();
+
+export default m.name;
