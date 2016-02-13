@@ -9,11 +9,10 @@ before_install:
   - sudo apt-get install -qq google-chrome-stable
 
 node_js:
-  - '0.10'
+  - '4.1'
 
 before_script:
-  - 'npm install -g bower grunt-cli'
-  - 'bower install'
+  - 'npm install'
   - 'node_modules/protractor/bin/webdriver-manager update'
-script: grunt && grunt itest
+script: npm run test && npm run itest && npm run build:prod
 sudo: required
