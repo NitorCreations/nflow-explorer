@@ -14,5 +14,5 @@ node_js:
 before_script:
   - 'npm install'
   - 'node_modules/protractor/bin/webdriver-manager update'
-script: npm run test && npm run itest && npm run build:prod
+script: npm run itest && npm run build:prod
 sudo: required
