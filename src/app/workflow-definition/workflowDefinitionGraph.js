@@ -1,9 +1,7 @@
-(function () {
-  'use strict';
+import angular from 'angular';
+import dagre from 'external/dagre-d3/js/dagre-d3';
 
-  var m = angular.module('nflowExplorer.workflowDefinition.graph', [
-    'nflowExplorer.graph'
-  ]);
+var m = angular.module('nflowExplorer.workflowDefinition.graph', []);
 
   m.directive('workflowDefinitionGraph', function() {
     return {
@@ -15,7 +13,7 @@
       bindToController: true,
       controller: 'WorkflowDefinitionGraphCtrl',
       controllerAs: 'ctrl',
-      templateUrl: 'app/workflow-definition/workflowDefinitionGraph.html'
+      template: require('./workflowDefinitionGraph.html')
     };
   });
 
@@ -121,4 +119,4 @@
     }
   });
 
-})();
+export default m.name;

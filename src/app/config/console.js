@@ -1,7 +1,8 @@
-(function () {
-  'use strict';
+import angular from 'angular';
+import _ from 'lodash';
 
-  angular.module('nflowExplorer.config.console', []).config(function(){
+export default angular.module('nflowExplorer.config.console', [])
+  .config(function(){
     // adapted from
     // http://stackoverflow.com/questions/3326650/console-is-undefined-error-for-internet-explorer/16916941#16916941
 
@@ -13,6 +14,5 @@
     ];
     var console = (window.console = window.console || {});
     _.forEachRight(methods, function(m) { if (!console[m]) { console[m] = _.noop; } });
-  });
+  }).name;
 
-})();

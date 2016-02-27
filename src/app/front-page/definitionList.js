@@ -1,7 +1,7 @@
-(function () {
-  'use strict';
+import angular from 'angular';
 
-  var m = angular.module('nflowExplorer.frontPage.definitionList', []);
+
+var m = angular.module('nflowExplorer.frontPage.definitionList', []);
 
   m.directive('definitionList', function() {
     return {
@@ -12,10 +12,10 @@
       },
       bindToController: true,
       controller: 'DefinitionListCtrl as ctrl',
-      templateUrl: 'app/front-page/definitionList.html'
+      template: require('./definitionList.html')
     };
   });
 
   m.controller('DefinitionListCtrl', function() {});
 
-})();
+export default m.name;

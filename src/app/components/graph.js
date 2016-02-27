@@ -1,8 +1,8 @@
-(function () {
-  'use strict';
+import angular from 'angular';
+require('external/dagre-d3/js/dagre-d3');
 
-  var m = angular.module('nflowExplorer.graph', []);
-
+var m = angular.module('nflowExplorer.graph', [
+]);
   m.factory('Graph', function() {
     return {
       setNodeSelected: setNodeSelected,
@@ -68,6 +68,7 @@
     }
 
     function workflowDefinitionGraph(definition, workflow) {
+
       var g = new dagreD3.Digraph();
       // NOTE: all nodes must be added to graph before edges
       addNodes();
@@ -354,4 +355,5 @@
 
     function edgeDomId(edgeId) { return 'edge' + edgeId; }
   });
-})();
+
+export default m.name;

@@ -1,7 +1,6 @@
-(function () {
-  'use strict';
+import angular from 'angular';
 
-  var m = angular.module('nflowExplorer.search.searchResult', [
+var m = angular.module('nflowExplorer.search.searchResult', [
     'nflowExplorer.constants',
     'nflowExplorer.filters'
   ]);
@@ -16,7 +15,7 @@
       },
       bindToController: true,
       controller: 'SearchResultCtrl as ctrl',
-      templateUrl: 'app/search/searchResult.html'
+      template: require('./searchResult.html')
     };
   });
 
@@ -46,4 +45,4 @@
 
   });
 
-})();
+export default m.name;

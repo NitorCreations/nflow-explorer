@@ -1,7 +1,7 @@
-(function () {
-  'use strict';
+import angular from 'angular';
 
-  var m = angular.module('nflowExplorer.util', []);
+
+var m = angular.module('nflowExplorer.util', []);
 
   m.directive('emptyToNull', function() {
     return {
@@ -18,4 +18,4 @@
     };
   });
 
-})();
+export default m.name;

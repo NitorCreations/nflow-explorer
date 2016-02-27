@@ -1,11 +1,8 @@
-(function () {
-  'use strict';
+import angular from 'angular';
+import moment from 'moment';
 
-  var m = angular.module('nflowExplorer.workflow.tabs.manage', [
-    'nflowExplorer.workflow.graph',
-    'nflowExplorer.services',
-    'ui.router'
-  ]);
+
+var m = angular.module('nflowExplorer.workflow.tabs.manage', []);
 
   m.directive('workflowTabManage', function() {
     return {
@@ -18,7 +15,7 @@
       bindToController: true,
       controller: 'WorkflowManageCtrl',
       controllerAs: 'ctrl',
-      templateUrl: 'app/workflow/tabs/manage.html'
+      template: require('./manage.html')
     };
   });
 
@@ -68,4 +65,5 @@
 
     function refresh() { $state.reload(); }
   });
-})();
+
+export default m.name;

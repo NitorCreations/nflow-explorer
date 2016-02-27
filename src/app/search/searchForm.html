@@ -40,7 +40,8 @@
         </div>
       </div>
     </div>
-    <button class="btn btn-default" ng-click="ctrl.search()">Search</button> <img ng-show="ctrl.showIndicator" src="images/spinner.gif">
+    <button class="btn btn-default" ng-click="ctrl.search()">Search</button>
+    <img ng-show="ctrl.showIndicator" ng-src="{{ctrl.spinnerUrl}}" />
   </form>
 
 </div>

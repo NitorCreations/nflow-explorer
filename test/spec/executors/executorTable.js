@@ -1,4 +1,5 @@
 'use strict';
+import moment from 'moment';
 
 describe('Directive: executorTable', function () {
 

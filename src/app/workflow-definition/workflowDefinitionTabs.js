@@ -1,11 +1,9 @@
-(function () {
-  'use strict';
-  var _statusNames = ['created', 'inProgress', 'executing', 'finished', 'manual'];
+import angular from 'angular';
+
+var _statusNames = ['created', 'inProgress', 'executing', 'finished', 'manual'];
   var _metaStatuses = ['queued', 'sleeping', 'executing', 'manual'];
 
-  var m = angular.module('nflowExplorer.workflowDefinition.tabs', [
-    'nvd3',
-  ]);
+  var m = angular.module('nflowExplorer.workflowDefinition.tabs', []);
 
   /** <workflow-definition-tabs></workflow-definition-tabs> */
   m.directive('workflowDefinitionTabs', function() {
@@ -18,7 +16,7 @@
       bindToController: true,
       controller: 'WorkflowDefinitionTabsCtrl',
       controllerAs: 'ctrl',
-      templateUrl: 'app/workflow-definition/workflowDefinitionTabs.html'
+      template: require('./workflowDefinitionTabs.html')
     };
   });
 
@@ -328,7 +326,7 @@
       bindToController: true,
       controller: 'WorkflowStatisticsTable',
       controllerAs: 'ctrl',
-      templateUrl: 'app/workflow-definition/workflowStatisticsTable.html'
+      template: require('./workflowStatisticsTable.html')
     };
   });
   m.controller('WorkflowStatisticsTable', function(WorkflowDefinitionGraphApi) {
@@ -340,4 +338,5 @@
       return state.id === WorkflowDefinitionGraphApi.selectedNode;
     }
   });
-})();
+
+export default m.name;

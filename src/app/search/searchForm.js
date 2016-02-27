@@ -1,12 +1,8 @@
-(function () {
-  'use strict';
+import angular from 'angular';
 
-  var m = angular.module('nflowExplorer.search.searchForm', [
-    'nflowExplorer.search.criteriaModel',
-    'nflowExplorer.services',
-    'nflowExplorer.util',
-    'nflowExplorer.constants'
-  ]);
+'use strict';
+
+  var m = angular.module('nflowExplorer.search.searchForm', []);
 
   m.directive('searchForm', function() {
     return {
@@ -19,7 +15,7 @@
       bindToController: true,
       controller: 'SearchFormCtrl',
       controllerAs: 'ctrl',
-      templateUrl: 'app/search/searchForm.html'
+      template: require('./searchForm.html')
     };
   });
 
@@ -30,7 +26,7 @@
     self.model = CriteriaModel.model;
     self.search = search;
     self.onTypeChange = CriteriaModel.onDefinitionChange;
-
+    self.spinnerUrl = require('images/spinner.gif');
     initialize();
 
     function initialize() {
@@ -51,4 +47,4 @@
     }
   });
 
-})();
+export default m.name;

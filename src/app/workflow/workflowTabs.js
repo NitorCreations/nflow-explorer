@@ -1,11 +1,6 @@
-(function () {
-  'use strict';
+import angular from 'angular';
 
-  var m = angular.module('nflowExplorer.workflow.tabs', [
-   'nflowExplorer.workflow.tabs.actionHistory',
-   'nflowExplorer.workflow.tabs.stateVariables',
-   'nflowExplorer.workflow.tabs.manage'
-  ]);
+var m = angular.module('nflowExplorer.workflow.tabs', []);
 
   m.directive('workflowTabs', function() {
     return {
@@ -19,9 +14,10 @@
       bindToController: true,
       controller: 'WorkflowTabsCtrl',
       controllerAs: 'ctrl',
-      templateUrl: 'app/workflow/workflowTabs.html'
+      template: require('./workflowTabs.html')
     };
   });
 
   m.controller('WorkflowTabsCtrl', function() {});
-})();
+
+export default m.name;
