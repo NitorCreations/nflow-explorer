@@ -55,6 +55,8 @@ describe('endpoint selection', function () {
       menu.clickEndpointSelection();
       menu.selectEndpoint('localhost');
 
+      var el = element(by.id('workflowDefinitionsList'));
+      browser.driver.wait(protractor.until.elementIsVisible(el));
       expect(menu.selectedEndpoint()).toBe('local nflow instance');
       expect(frontPage.getDefinitions()).toContain('fibonacci');
     });
