@@ -19,11 +19,7 @@ module.exports = function makeWebpackConfig (options) {
   var PORT = 8000;
   var ROOT_DIR = options.ROOT_DIR;
   var POST_CSS = false;
-  //var appConfig = require('../env')(options.ENV) // TODO
-  var appConfig = {};
 
-  console.log('Application configuration:')
-  console.log(JSON.stringify(appConfig, null, 4))
   /**
    * Config
    * Reference: http://webpack.github.io/docs/configuration.html
@@ -104,10 +100,9 @@ module.exports = function makeWebpackConfig (options) {
     loaders: [
     {
         // CONFIG LOADER
-        // Reference: https://www.npmjs.com/package/json-string-loader
-        // Override contents of config.json with this appConfig
-        test: /config.json$/,
-        loader: 'json-string-loader?json=' + JSON.stringify(appConfig)
+        // Configuration is external to bundled app.js so that it can be overridden externally to app.js
+        test: /config.js$/,
+        loader: 'file-loader?name=config.js'
     }, {
       // JS LOADER
       // Reference: https://github.com/babel/babel-loader
@@ -234,8 +229,10 @@ module.exports = function makeWebpackConfig (options) {
   }
 
   // Add build specific plugins
-  if (!BUILD) {
+  if (BUILD) {
     config.plugins.push(
+      new webpack.optimize.OccurrenceOrderPlugin(),
+
       // Reference: http://webpack.github.io/docs/list-of-plugins.html#noerrorsplugin
       // Only emit files when there are no errors
       new webpack.NoErrorsPlugin(),
@@ -246,7 +243,11 @@ module.exports = function makeWebpackConfig (options) {
 
       // Reference: http://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin
       // Minify all javascript, switch loaders to minimizing mode
-      new webpack.optimize.UglifyJsPlugin()
+      new webpack.optimize.UglifyJsPlugin({
+        compress: {
+          warnings: false
+        }
+      })
     )
   }
 
@@ -256,7 +257,7 @@ module.exports = function makeWebpackConfig (options) {
    * Reference: http://webpack.github.io/docs/webpack-dev-server.html
    */
   config.devServer = {
-    contentBase: './public',
+    contentBase: './dist',
     port: PORT,
     stats: {
       modules: false,

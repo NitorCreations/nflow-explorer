@@ -4,7 +4,7 @@
   "scripts": {
     "build:test": "webpack --config webpack.build-test.js --bail -p",
     "build:prod": "webpack --config webpack.build-prod.js --bail -p",
-    "dev": "webpack-dev-server --history-api-fallback --inline --progress",
+    "dev": "webpack-dev-server --history-api-fallback --inline --progress --content-base dist/",
     "dev:dist": "node test-server.js",
     "test": "karma start",
     "test:live": "karma start --auto-watch --no-single-run",
@@ -21,7 +21,7 @@
     "angular-sanitize": "1.4.9",
     "angular-touch": "1.4.9",
     "angular-ui-router": "0.2.15",
-    "autoprefixer": "6.1.2",
+    "autoprefixer": "6.7.7",
     "bootstrap-sass": "3.3.6",
     "d3": "3.5.15",
     "dygraphs": "1.1.0",
@@ -39,6 +39,7 @@
     "babel-eslint": "^4.1.5",
     "babel-loader": "^5.3.2",
     "babel-runtime": "^5.8.29",
+    "browserslist": "1.7.6",
     "css-loader": "^0.23.0",
     "es6-promise": "^3.0.2",
     "eslint": "1.10.3",
@@ -73,7 +74,7 @@
     "raw-loader": "^0.5.1",
     "sass-loader": "3.1.2",
     "style-loader": "^0.13.0",
-    "webpack": "1.12.13",
+    "webpack": "1.14.0",
     "webpack-dev-server": "1.14.1"
   },
   "engines": {

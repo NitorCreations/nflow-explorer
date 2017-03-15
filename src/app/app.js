@@ -1,10 +1,11 @@
 import angular from 'angular';
 
+require('../config');
 require('styles/main.scss');
 require('styles/dagre.css');
 
-require('angular-nvd3')
-require('d3')
+require('angular-nvd3');
+require('d3');
 //require('../external/angular-ui-bootstrap/ui-bootstrap-custom-0.10.0.js');
 //require('../external/dagre-d3/js/dagre-d3.js');
 

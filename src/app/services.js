@@ -2,21 +2,7 @@ import angular from 'angular';
 import moment from 'moment';
 
 export default angular.module('nflowExplorer.services', [])
-  // TODO new config
-.constant('config', {
-  //nflowUrl: 'http://localhost:7500/api',
-  nflowUrl: 'http://bank.nflow.io/nflow-dev/api',
-
-  nflowApiDocs: 'http://localhost:7500/doc',
-  //nflowApiDocs = 'http://bank.nflow.io/nflow/doc/',
-
-  radiator: {
-    // poll period in seconds
-    pollPeriod: 15,
-    // max number of items to keep in memory
-    maxHistorySize: 10000,
-  }
-})
+.constant('config', Config)
 .factory('Workflows', function WorkflowsFactory($resource, config) {
   return $resource(config.nflowUrl + '/v1/workflow-instance/:id',
                    {id: '@id', include: 'actions,currentStateVariables,actionStateVariables'},
