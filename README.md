@@ -1,6 +1,8 @@
 # nflow-explorer
 
 User Interface for [nFlow](https://github.com/NitorCreations/nflow).
+
+_Merged to nFlow repository, not developed here anymore._
 ***
 
 ## Screenshots
