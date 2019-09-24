@@ -2,7 +2,8 @@
 
 User Interface for [nFlow](https://github.com/NitorCreations/nflow).
 
-_Merged to nFlow repository, not developed here anymore._
+_nflow-explorer is now part of [nFlow](https://github.com/NitorCreations/nflow) repository. This repository is no longer updated._
+
 ***
 
 ## Screenshots
